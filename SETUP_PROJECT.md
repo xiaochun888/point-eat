@@ -23,6 +23,11 @@ vue init webpack my-project
 # Install Visual Studio Code extensions (TSLint, ESLint, Vetur, markdownlint, Debugger for Chrome)
 # Add Visual Studio Code configuration (./.vscode/launch.json, ./.vscode/settings.json)
 # Set autoOpenBrowser: true in config/index.js
+git init
+git add .
+git commit -m "my commit"
+git remote add origin <remote repository URL>
+git push origin master
 
 ```
 
