@@ -20,8 +20,12 @@ npm install -g vue-cli
 npm install -g @vue/cli-init
 # full-featured webpack
 vue init webpack my-project
+# install jest test framework with installing jdk ,making chromedriver and chrome version compatible and modifying jest.conf.js
+npm install --save-dev jest nightwatch
+# Install a Markdown compiler into HTML
+npm install -g markdown-it
 # Install Visual Studio Code extensions (TSLint, ESLint, Vetur, markdownlint, Debugger for Chrome)
-# Add Visual Studio Code configuration (./.vscode/launch.json, ./.vscode/settings.json)
+# Install Visual Studio Code configuration (./.vscode/launch.json, ./.vscode/settings.json, ./.vscode/tasks.json)
 # Set autoOpenBrowser: true in config/index.js
 git init
 git add .

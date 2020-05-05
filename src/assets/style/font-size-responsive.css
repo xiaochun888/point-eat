@@ -1,0 +1,40 @@
+/**
+* consistent font sizes across all browsers on Mac and Windows
+*/
+
+/**Initially the html>body definition is applied to all browsers*/
+html {
+  /* default font-size is 16px (1em), minimal is 8px */
+  font-size: calc(12px + .7vw);
+  font-weight: 400;
+}
+/**Next, body definition is set for all browsers that don’t understand the initial definition*/
+body {
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", "STKaiti", "华文楷体", "KaiTi", "楷体", sans-serif;
+  /**IE/Safari inherit != 100% */
+  font-size: 100%;
+  /** disable-pull-to-refresh-effect on android chrome. */
+  overflow-y: hidden;
+}
+
+/* Notes:
+* Default font-size
+* h1 { font-size: 2em }
+* h2 { font-size: 1.5em }
+* but button and input with font-size 12px
+*/
+button { 
+  font-size: inherit;
+}
+input { 
+  font-size: inherit;
+}
+/**Using input with type=password produces a leak of memory.
+* So make a fake password input with type text using a custom font.
+*/
+@font-face {
+  font-family: 'password';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/password.ttf');
+}

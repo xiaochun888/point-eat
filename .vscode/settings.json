@@ -1,0 +1,7 @@
+{
+    "git.ignoreLimitWarning": true,
+    //replace tab by 2 space
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true
+}

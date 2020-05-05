@@ -71,7 +71,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       minify: {
         removeComments: true,
         collapseWhitespace: true,
-        removeAttributeQuotes: true
+        removeAttributeQuotes: true,
+        removeEmptyAttributes: true,
+        html5: true,
+        minifyCSS: true
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
@@ -111,6 +114,13 @@ const webpackConfig = merge(baseWebpackConfig, {
       children: true,
       minChunks: 3
     }),
+    //  automatically load jquery and declare globally in .eslintrc.js
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery'
+    }),    
 
     // copy custom static assets
     new CopyWebpackPlugin([
@@ -119,7 +129,26 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
+    ]),
+
+    // copy custom icon assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../src/assets/icon'), 
+        to: 'assets/icon',
+        ignore: ['.*']
+      } 
+    ]),
+
+    // copy custom audio assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../src/assets/media'), 
+        to: 'assets/media',
+        ignore: ['.*']
+      } 
     ])
+
   ]
 })
 

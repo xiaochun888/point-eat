@@ -1,0 +1,162 @@
+/**
+* https://stackoverflow.com/questions/8796107/how-to-make-changeable-themes-using-css-and-javascript
+*/
+.noselect {
+    -webkit-touch-callout: none;/* iOS Safari */
+    -webkit-user-select: none;  /* Safari */
+    -khtml-user-select: none;   /* Konqueror HTML */
+    -moz-user-select: none;     /* Old versions of Firefox */
+    -o-user-select: none;
+    -ms-user-select: none;      /* Internet Explorer/Edge */
+    user-select: none;          /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+    outline-style: none;        /* Internet Explorer*/
+}
+.btn:focus,
+.btn:active,
+.anchor-shadow:focus,
+.anchor-shadow:active {
+    outline: none;
+    box-shadow: none;
+    -o-box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+.flex-center {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  
+    align-items: center;
+    justify-content: center;
+    text-align: center;  
+}
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.circle-radius {
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.square-radius {
+    border-radius: 4px; /** compared to font Comic Sans MS */
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;  
+}
+.inherit-radius {
+    border-radius: inherit; /** compared to font Comic Sans MS */
+    -o-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -webkit-border-radius: inherit;  
+}
+.border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.box-shadow {
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, .5);
+    -o-box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, .5);
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
+}
+.box-shadow:hover {
+    box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.3);
+}
+.box-shadow:active:hover {
+    $box-shadow-color: #666; //default color
+    --box-shadow-color: #666; //dynamic color
+    $box-shadow-color: var(--box-shadow-color);
+
+    box-shadow: inset 0 0 1000px $box-shadow-color;
+    -o-box-shadow: inset 0 0 1000px $box-shadow-color;
+    -moz-box-shadow: inset 0 0 1000px $box-shadow-color;
+    -webkit-box-shadow: inset 0 0 1000px $box-shadow-color;
+}
+.arrow-left,
+.arrow-right {
+  border: solid white;
+  border-width: 0 0.2em 0.2em 0;
+  display: inline-block;
+  padding: 0.3em;
+}
+.arrow-right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.arrow-left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+//https://stackoverflow.com/questions/5754439/how-to-make-bevel-and-embosed-effect-to-button-in-css-3-for-web-kit-based-browse
+// .emboss-shadow {
+//   box-shadow: 
+//     0 1px 2px #fff, /*bottom external highlight*/
+//     0 -1px 1px #666, /*top external shadow*/ 
+//     inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/ 
+//     inset 0 1px 1px rgba(255,255,255,0.8); /*top internal highlight*/
+// }
+
+/* styles for '...' */ 
+.text-ellipsis {
+  /* hide text if it more than N lines  */
+  overflow: hidden;
+  /* for set '...' in absolute position */
+  position: relative; 
+  /* use this value to count block height */
+  line-height: 1.2em;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 3.6em; 
+  /* place for '...' */
+  margin-right: -1em;
+  padding-right: 1em;
+}
+/* create the ... */
+.text-ellipsis:before {
+  /* points in the end */
+  content: '...';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+/* hide ... if we have text, which is less than or equal to max lines */
+.text-ellipsis:after {
+  /* points in the end */
+  content: '';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of text */
+  right: 0;
+  /* set width and height */
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  /* clean ... */
+  background: white;
+}

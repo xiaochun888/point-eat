@@ -57,6 +57,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true
     }),
+    //  automatically load jquery and declare globally in .eslintrc.js
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery'
+    }),    
+
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -64,7 +72,26 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }
+    ]),
+
+    // copy custom icon assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../src/assets/icon'), 
+        to: 'assets/icon',
+        ignore: ['.*']
+      } 
+    ]),
+
+    // copy custom audio assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../src/assets/media'), 
+        to: 'assets/media',
+        ignore: ['.*']
+      } 
     ])
+
   ]
 })
 

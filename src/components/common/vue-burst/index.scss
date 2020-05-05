@@ -1,0 +1,25 @@
+.vue-burst {
+  .particles {
+    position: relative;
+  }
+
+  .particles-canvas {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  .particles-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .particles-content {
+    position: relative;
+    cursor: pointer;
+    background: #ddd;
+    // color: #fff;
+  }
+}
