@@ -12,11 +12,12 @@
         </div>
         <div class="domains">
           <agile :navButtons="false" :dots="false" :slides-to-show="4" :autoplaySpeed="5000" autoplay>
-            <div class="education"></div>
-            <div class="health"></div>
-            <div class="security"></div>
-            <div class="catering"></div>
-            <div class="building"></div>
+            <!-- Add &nbsp; for IE to get width of slide -->
+            <div class="education">&nbsp;</div>
+            <div class="health">&nbsp;</div>
+            <div class="security">&nbsp;</div>
+            <div class="catering">&nbsp;</div>
+            <div class="building">&nbsp;</div>
           </agile>
         </div>
         <!-- <div class="contact">
@@ -31,7 +32,7 @@
             </div>
         </div> -->
         <div class="company">
-             @ 2020 {{$t("witvue")|capitalize}}. {{$t("All rights reserved.")}}
+             @ 2020 {{$t("witvue")|capitalize}} {{$t("All rights reserved")}}
         </div>
     </div>
 </div>
@@ -80,6 +81,7 @@ export default {
     .domains {
       padding-top: 1em;
       padding-bottom: 1em;
+
       .agile__slide {
         height: 3em;
       }

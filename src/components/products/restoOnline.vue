@@ -5,7 +5,6 @@
         <div>{{$t("Difficult to recruit?")}}</div>
         <div>{{$t("Too busy on clients peak?")}}</div>
         <div>{{$t("Want more clients?")}}</div>
-        <!-- <div>{{$t("Want to grade?")}} ...</div> -->
         <div class="clickhere">{{$t("Click here")}}</div>
       </burst>
       <div class="product">
@@ -16,7 +15,7 @@
       </div>
     </div>
     <div class="feature border-box">
-      <focus-hint>{{$t("Complete functions")}}<div slot="hint">{{$t("Use usual screen display, plug and play")}}</div></focus-hint>
+      <focus-hint>{{$t("Complete functions")}}<div slot="hint">{{$t("Use usual screens, simple operation")}}</div></focus-hint>
       <div class="large">
         <agile ref="large" :as-nav-for="asNavForSmall" :navButtons="false" :dots="false" :fade="true">
           <div v-for="(slide, index) in features" :key="index" class="slide" :class="slide.cssClass">
@@ -42,17 +41,17 @@
       </div>
     </div>
     <div class="themes">
-      <focus-hint>{{$t("Simple and fine layout")}}<div slot="hint">{{$t("Paginated and sliding, fine theme colors")}}</div></focus-hint>
+      <focus-hint>{{$t("Simple and fine layout")}}<div slot="hint">{{$t("Paginated and sliding, theme colors personalized")}}</div></focus-hint>
       <div class="row border-box">
         <div class="col-sm-4">
           <div class="desktop">
             <agile :navButtons="false" :dots="false" :fade="true">
               <slide>
-                <div slot="head">别人的版面: 满屏按键</div>
+                <div slot="head"></div>
                 <div><img src="@/assets/img/others.png"></div>
               </slide>
               <slide>
-                <div slot="head">我们的版面: 分页刷屏</div>
+                <div slot="head"></div>
                 <div><img src="@/assets/img/desktop.png"></div>
               </slide>
             </agile>
@@ -156,14 +155,14 @@
       </div>
     </div>
     <div class="company">
-      @ 2020 {{$t("witvue")|capitalize}}. {{$t("All rights reserved.")}}
+      @ 2020 {{$t("witvue")|capitalize}} {{$t("All rights reserved")}}
     </div>
   </div>
 </template>
 
 <script lang="js">
 import slimScroll from '@/components/common/slimScroll.vue';
-import paneVideo from '@/components/common/paneVideo.vue';
+// import paneVideo from '@/components/common/paneVideo.vue';
 import { VueAgile } from '@/components/common/vue-agile';
 import focusHint from '@/components/common/focusHint.vue';
 import burst from '@/components/common/vue-burst';
@@ -173,7 +172,7 @@ export default {
   name: 'resto-online',
   components: {
     'slim-scroll': slimScroll,
-    'pane-video': paneVideo,
+    // 'pane-video': paneVideo,
     'agile': VueAgile,
     'focus-hint': focusHint,
     'slide': slide,
@@ -216,8 +215,7 @@ export default {
         return [
           { head: 'Wireless',
             body: [
-              'Mobile phone, tablet',
-              'Other touch screen or computer',
+              'Mobile, tablet or computer in WiFi',
               'No keyboard or mouse required',
               'Wireless printing'
             ],
@@ -235,26 +233,26 @@ export default {
           },
           { head: 'Interactive',
             body: [
-              'Client request notified',
-              'Cooking service notified'
+              'Notifier client request',
+              'Notify service or cooking'
             ],
             cssClass: 'snack'
           },
           { head: 'Cooperative',
             body: [
-              'Operation differed by role',
-              'Message shared among roles'
+              'Role operations different',
+              'Messages shared'
             ],
             cssClass: 'bar'
           },
           { head: 'separate printing',
             body: [
-              'Multi-clients separate printing',
-              'Multi-kitchens separate printing'
+              'Multi-meal separate printing',
+              'Multi-kitchen separate printing'
             ],
             cssClass: 'buffet'
           },
-          { head: 'Reliable',
+          { head: 'Secure and reliable',
             body: [
               'Daily scheduled backup',
               'No need Internet'
@@ -263,56 +261,56 @@ export default {
           }
         ];
       }
-    },
-    performs: {
-      get: function() {
-        return [
-          { head: 'Client',
-            body: [
-              'order with one hand',
-              'cooking signal',
-              'serving reminder'],
-            sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
-          },
-          { head: 'Waiter',
-            body: [
-              'order with one hand',
-              'service recording',
-              'serving reminder',
-              'cleaning signal',
-              'summary printing'],
-            sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
-          },
-          { head: 'Cook',
-            body: [
-              'order postits',
-              'order printing',
-              'cooking notification',
-              'serving notification'],
-            sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
-          },
-          { head: 'Cashier',
-            body: [
-              'order slides',
-              'payment recording',
-              'separate printing',
-              'report printing'],
-            sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
-          },
-          { head: 'Manager',
-            body: ['statistics graph'],
-            sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
-          },
-          { head: 'Point of sale',
-            body: [
-              'order with one hand',
-              'call number signal',
-              'call number printing'],
-            sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
-          }
-        ];
-      }
     }
+    // performs: {
+    //   get: function() {
+    //     return [
+    //       { head: 'Client',
+    //         body: [
+    //           'order with one hand',
+    //           'cooking signal',
+    //           'serving reminder'],
+    //         sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
+    //       },
+    //       { head: 'Waiter',
+    //         body: [
+    //           'order with one hand',
+    //           'service recording',
+    //           'serving reminder',
+    //           'cleaning signal',
+    //           'summary printing'],
+    //         sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
+    //       },
+    //       { head: 'Cook',
+    //         body: [
+    //           'order postits',
+    //           'order printing',
+    //           'cooking notification',
+    //           'serving notification'],
+    //         sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
+    //       },
+    //       { head: 'Cashier',
+    //         body: [
+    //           'order slides',
+    //           'payment recording',
+    //           'separate printing',
+    //           'report printing'],
+    //         sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
+    //       },
+    //       { head: 'Manager',
+    //         body: ['statistics graph'],
+    //         sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
+    //       },
+    //       { head: 'Point of sale',
+    //         body: [
+    //           'order with one hand',
+    //           'call number signal',
+    //           'call number printing'],
+    //         sources: [{src:'assets/media/palm_tree.mp4', type:'video/mp4'}]
+    //       }
+    //     ];
+    //   }
+    // }
   },
   filters: {
     capitalize(word) {

@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="app">
-    <div class="scrollable">
-      <slim-scroll :wheelStep="20" :size="scrollSize">
+    <div class="makeScrollable">
+      <slim-scroll :size="scrollBarWidth" :class="{'scrollBarWidth': !isTouchDevice}">
         <div class="app-header container">
           <div class="btn-group btn-group-justified app-header-menu " role="group" aria-label="...">
-            <div class="btn-group app-header-logo flex-center">
+            <div class="btn-group app-header-logo flex-center" @click="$router.push('/aboutus')">
               <img src="@/assets/img/logo.png" />
               <div class="company">
                 <div class="witvue">{{$t("witvue")}}</div>
@@ -76,13 +76,12 @@ export default {
     routes () {
       return this.$router.options.routes.filter(route => route.path != '*');
     },
-    isTouchable() {
+    isTouchDevice() {
       return ('ontouchstart' in window) ||
-             (navigator.maxTouchPoints > 0) ||
              (navigator.msMaxTouchPoints > 0);
     },
-    scrollSize() {
-      return this.isTouchable ? '3px' : '12px';
+    scrollBarWidth() {
+      return this.isTouchDevice ? '3px' : '12px';
     }
   },
   methods: {
@@ -122,11 +121,17 @@ export default {
 <style scoped lang="scss">
 .app {
   color: #2c3e50;
-  .scrollable {
+  .makeScrollable {
     top: 0.01em;
     width: 100%;
     height: calc(100% - 0.01em);
     position: absolute;
+  }
+  /**Safari/iOS */
+  /deep/ .scrollBarWidth {
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
   }
   &-header {
     width: 100%;
@@ -195,6 +200,8 @@ export default {
               img {
                 height: 0.8em;
                 width: 0.8em;
+                float: right;
+                margin-right: 5px;
               }
             }
           }
@@ -271,11 +278,7 @@ export default {
 </style>
 <style lang='scss'>
   @import 'assets/scss/app-commun.scss';
-  .slimScrollBarY {
-    background: blue;
-  }
-
-  @media (pointer:none), (pointer:coarse) {
-    /* custom css for "touch targets" */
+  /deep/ .slimScrollBarY {
+    background: red !important;
   }
 </style>

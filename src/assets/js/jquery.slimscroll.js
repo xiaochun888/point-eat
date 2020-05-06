@@ -636,7 +636,10 @@
 
             if (isWheel) {
               // move bar with mouse wheel
-              deltaY = parseInt(barY.css('top')) + (y * parseInt(o.wheelStep) / 100);
+              /**correction 06/05/2020 slow scrolling in Firefox */
+              // deltaY = parseInt(barY.css('top')) + (y * parseInt(o.wheelStep) / 100);
+              if (y > 15 || y < -15) y = Math.ceil(y / 16);
+              deltaY = parseInt(barY.css('top')) + y * parseInt(o.wheelStep) / 100 * barY.outerHeight();
 
               // move bar, make sure it doesn't go out
               deltaY = Math.min(Math.max(deltaY, 0), maxTop);
