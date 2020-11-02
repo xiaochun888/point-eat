@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app">
     <div class="makeScrollable">
-      <slim-scroll :size="scrollBarWidth" :class="{'scrollBarWidth': !isTouchDevice}">
+      <slim-scroll :touchScrollStep="10" :size="scrollBarWidth" :class="{'scrollBarWidth': !isTouchDevice}" alwaysVisible>
         <div class="app-header container">
           <div class="btn-group btn-group-justified app-header-menu " role="group" aria-label="...">
             <div class="btn-group app-header-logo flex-center" @click="$router.push('/aboutus')">
@@ -149,10 +149,12 @@ export default {
         font-weight: 900;
         font-size: 1.3em;
         white-space: nowrap;
+        margin-right: 0.25em;
       }
       .slogan {
         font-size: 0.5em;
         white-space: nowrap;
+        margin-right: 0.25em;
       }
     }
     .click-popover {
@@ -277,8 +279,7 @@ export default {
 }
 </style>
 <style lang='scss'>
+  @import 'assets/scss/toast-notification-v0.5.4.scss';
   @import 'assets/scss/app-commun.scss';
-  /deep/ .slimScrollBarY {
-    background: red !important;
-  }
+  @import 'assets/scss/app-theme.scss';
 </style>

@@ -74,6 +74,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       }
     ]),
 
+    // copy custom img assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../src/assets/img'), 
+        to: 'assets/img',
+        ignore: ['.*']
+      } 
+    ]),
+
     // copy custom icon assets
     new CopyWebpackPlugin([
       {

@@ -1,14 +1,14 @@
 <template lang="html">
-    <div class="slide">
-      <div class="slide-head"><slot name="head"></slot></div>
-      <div class="slide-body"><slot></slot></div>
-      <div class="slide-foot"><slot name="foot"></slot></div>
+    <div class="column">
+      <div class="column-head"><slot name="head"></slot></div>
+      <div class="column-body"><slot></slot></div>
+      <div class="column-foot"><slot name="foot"></slot></div>
     </div>
 </template>
 
 <script lang="js">
 export default {
-  name: 'slide',
+  name: 'column',
   methods: {
     ellipsizeTextBox(id) {
       let el = document.getElementById(id);
@@ -22,7 +22,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.slide {
+.column {
   width: 100%;
   height: 100%;
   & div {

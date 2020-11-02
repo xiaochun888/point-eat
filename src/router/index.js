@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import restoOnline from '@/components/products/restoOnline';
+import pointEat from '@/components/products/pointEat';
 import aboutUs from '@/components/aboutUs';
-// const restoOnline = () => import(/* webpackChunkName: "restoOnline" */ '@/components/products/restoOnline');
+// const pointEat = () => import(/* webpackChunkName: "pointEat" */ '@/components/products/pointEat');
 // const aboutUs = () => import(/* webpackChunkName: "aboutUs" */ '@/components/aboutUs');
 
 Vue.use(Router);
@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Products',
-      component: restoOnline
+      name: 'New product',
+      component: pointEat
     },
     {
       path: '/aboutus',

@@ -97,21 +97,6 @@
     -moz-box-shadow: inset 0 0 1000px $box-shadow-color;
     -webkit-box-shadow: inset 0 0 1000px $box-shadow-color;
 }
-.arrow-left,
-.arrow-right {
-  border: solid white;
-  border-width: 0 0.2em 0.2em 0;
-  display: inline-block;
-  padding: 0.3em;
-}
-.arrow-right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-.arrow-left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-}
 //https://stackoverflow.com/questions/5754439/how-to-make-bevel-and-embosed-effect-to-button-in-css-3-for-web-kit-based-browse
 // .emboss-shadow {
 //   box-shadow: 

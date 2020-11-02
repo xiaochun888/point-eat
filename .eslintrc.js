@@ -33,12 +33,13 @@ module.exports = {
     'eol-last': ['error', 'always'],
     'indent': ['error', 2],
     'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
-    'max-len': ['error', { 'code': 400 }],
+    'max-len': ['error', { 'code': 1000 }],
     // allow paren-less arrow functions
     //'arrow-parens': 0,
     // allow async-await
     //'generator-star-spacing': 0,
     // allow debugger during development
+    'new-cap': ['error', { 'newIsCap': false }],
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'no-tabs': 0,
     'no-caller': 'error',
@@ -60,6 +61,7 @@ module.exports = {
     'one-var': 'off',
     'no-self-compare': 'off',
     'no-undef': 'off',
-    'no-mixed-operators': 'off'
+    'no-mixed-operators': 'off',
+    'no-template-curly-in-string': 'off'
   }
 }

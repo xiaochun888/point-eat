@@ -1,51 +1,69 @@
 <template>
 <div class="about-us">
     <div>
-        <div class="picture flex-center">
+        <lazy-div class="picture flex-center" cls="home">
           <div class="noselect animated slideInLeft"><img src="@/assets/img/logo_transparent.png" /></div>
           <div class="slogan animated slideInLeft"></div>
-        </div>
+        </lazy-div>
         <div class="present">
             <p>{{$t("WITVUE, headquartered in Paris, France, specializes in artificial intelligence and network communication applications, and is committed to developing products in the fields of education, health, security and catering. "
-                  + "Our researchers come from all over the world and cooperate with many research institutions and companies. We provide the best technology and products to make life easier and more convenient.")}}
+                  + "Our researchers come from all over the world and cooperate with many research institutions and companies. We work hard to provide the best technology and products to make life easier and more convenient.")}}
             </p>
         </div>
         <div class="domains">
-          <agile :navButtons="false" :dots="false" :slides-to-show="4" :autoplaySpeed="5000" autoplay>
+          <swiper :paginate="false" :mousewheel="false" direction="horizontal" autoplay loop>
             <!-- Add &nbsp; for IE to get width of slide -->
-            <div class="education">&nbsp;</div>
-            <div class="health">&nbsp;</div>
-            <div class="security">&nbsp;</div>
-            <div class="catering">&nbsp;</div>
-            <div class="building">&nbsp;</div>
-          </agile>
+            <lazy-div cls="education">&nbsp;</lazy-div>
+            <lazy-div cls="health">&nbsp;</lazy-div>
+            <lazy-div cls="security">&nbsp;</lazy-div>
+            <lazy-div cls="catering">&nbsp;</lazy-div>
+            <lazy-div cls="building">&nbsp;</lazy-div>
+          </swiper>
         </div>
-        <!-- <div class="contact">
-            <focus-hint>联系我们</focus-hint>
-            <div class="row content">
-                <div class="col-sm-12">
-                    <table><tbody>
-                        <tr><td>邮箱: </td><td>hotline@witvue.com</td></tr>
-                        <tr><td>热线：</td><td>+33 973502892</td></tr>
-                    </tbody></table>
-                </div>
+        <div class="contact">
+          <div class="container">
+            <div class="row border-box">
+              <div class="col-sm-6">
+                <column>
+                  <div class="contactus">{{$t("Contact us")}}</div>
+                  <table><tbody>
+                    <tr><td>{{$t("Address")}}：</td><td>15 Bis Avenue du Moulin de Saquet</td></tr>
+                    <tr><td></td><td>94400 Vitry-Sur-Seine</td></tr>
+                    <tr><td>{{$t("Email")}}：</td><td>contact@witvue.com</td></tr>
+                    <tr><td>{{$t("Phone")}}：</td><td>+33 973502892</td></tr>
+                  </tbody></table>
+                </column>
+              </div>
+              <div class="col-sm-6">
+                <column>
+                  <div class="recruitment">{{$t("If you are passionate about new technology and full of creativity, welcome to join us.")}}</div>
+                  <table><tbody>
+                    <tr><td>{{$t("Email")}}：</td><td>recruitment@witvue.com</td></tr>
+                  </tbody></table>
+                </column>
+              </div>
             </div>
-        </div> -->
+          </div>
+        </div>
         <div class="company">
-             @ 2020 {{$t("witvue")|capitalize}} {{$t("All rights reserved")}}
+             @2020 {{$t("witvue")|capitalize}}
         </div>
     </div>
 </div>
 </template>
 <script lang="js">
 import focusHint from '@/components/common/focusHint.vue';
-import { VueAgile } from '@/components/common/vue-agile';
+import lazyDiv from '@/components/common/lazyDiv.vue';
+import swiper from '@/components/common/swiper';
+import column from '@/components/common/column.vue';
 
 export default {
   name: 'about-us',
   components: {
     'focus-hint': focusHint,
-    'agile': VueAgile
+    'lazy-div': lazyDiv,
+    'swiper': swiper,
+    'column': column
   },
   filters: {
     capitalize(word) {
@@ -57,9 +75,12 @@ export default {
 <style scoped lang="scss">
 .about-us {
     height: 100%;
+    .home {
+      background: no-repeat center/cover url("~@/assets/img/aboutUs/home.jpg");
+    }
     .picture {
       height: calc(100vh - 3.5em);
-      background: no-repeat center/cover url("~@/assets/img/aboutUs/home.jpg");
+      // background: no-repeat center/cover url("~@/assets/img/aboutUs/home.jpg");
       position: relative;
       img {
         width: 16em;
@@ -80,50 +101,53 @@ export default {
     }
     .domains {
       padding-top: 1em;
-      padding-bottom: 1em;
 
       .agile__slide {
         height: 3em;
       }
+      .swiper {
+        height: 3em;
+        &-wrap {
+          width: 100%;
+          div {
+            width: 25%;
+          }
+        }
+      }
       .education {
         background: no-repeat center/cover url("~@/assets/img/aboutUs/education.jpg");
+        height: 100%;
       }
       .health {
         background: no-repeat center/cover url("~@/assets/img/aboutUs/health.jpg");
+        height: 100%;
       }
       .security {
         background: no-repeat center/cover url("~@/assets/img/aboutUs/security.jpg");
+        height: 100%;
       }
       .catering {
         background: no-repeat center/cover url("~@/assets/img/aboutUs/catering.jpg");
+        height: 100%;
       }
       .building {
         background: no-repeat center/cover url("~@/assets/img/aboutUs/building.jpg");
+        height: 100%;
       }
     }
     .contact {
+        background-color: #ddd;
         padding: 1em 0;
-        /deep/ .focus-hint {
-            tr {
-                border-color: #ddd;
-            }
-            .focus {
-                background-color:#ddd;
-                color: black;
-            }
-            .form {
-                border-left: 2em solid #ddd;
-            }
+        /deep/ .column {
+          &-head {
+            height: 0 !important;
+          }
         }
-        .content {
-            margin: 0 1em;
-            td {
-                height: 2em;
-                line-height: 1em;
-            }
-            td:first-child {
-                white-space: nowrap;
-            }
+        .contactus {
+          border-bottom: 1px solid #aaa;
+        }
+        .recruitment {
+          margin-bottom: 1em;
         }
     }
     .company {

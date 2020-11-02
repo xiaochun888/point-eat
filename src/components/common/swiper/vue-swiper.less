@@ -1,0 +1,73 @@
+.swiper {
+  position: relative;
+  overflow: hidden;
+
+  &:focus,
+  &:active,
+  & *:focus,
+  & *:active {
+    outline: none;
+  }
+  
+  .swiper-wrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: all 0ms ease;
+
+    > div {
+      overflow: hidden;
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.horizontal .swiper-wrap {
+    flex-direction: row;
+  }
+
+  &.vertical .swiper-wrap {
+    flex-direction: column;
+  }
+
+  .swiper-paginate {
+    // position: fixed; /**28/05/2020 make top or width percent possible*/
+    position: absolute;
+    .swiper-paginate-dot {
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      transition: all .5s ease;
+      border: 1px solid;
+    }
+
+    .swiper-paginate-dot.active {
+      background-color: #000000;
+    }
+  }
+
+  &.vertical .swiper-paginate {
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+  
+    .swiper-paginate-dot {
+      display: block;
+      margin: 0.5em 0;
+    }
+  }
+
+  &.horizontal .swiper-paginate {
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+
+    .swiper-paginate-dot {
+      display: inline-block;
+      margin: 0 0.5em;
+    }
+  }
+}
