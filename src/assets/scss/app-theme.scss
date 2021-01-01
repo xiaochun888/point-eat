@@ -1,0 +1,66 @@
+/**TODO
+* https://stackoverflow.com/questions/8796107/how-to-make-changeable-themes-using-css-and-javascript
+* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Browser_compatibility
+* https://www.npmjs.com/package/css-vars-ponyfill
+* theme.css in css/ for customization
+* To standardize css classes in theme.css
+* example:
+* scss/less css css
+* scoped-scss commun-css ENUM_CSS
+* class="layer theme state"
+* var(--app-color), hsla / hsl + calc()
+*/
+// document.body.style.setProperty("--primary-color", "red");
+
+/**default CSS variables*/
+:root {
+  /**major color: panel box
+  *  minor color: menu tab
+  *  third color: button
+  *  neuter color: text, border, shadow and graph
+  *  border: #aaa #bbb #ccc #ddd
+  */
+  --major: hsla(40, 8%, 93%, 1);//#EEEDEB;   background
+  --major-10: hsla(40, 3%, 83%, 1);//#D5D4D2 background1
+  --major-20: hsla(40, 2%, 73%, 1);//#BBBAB8 background2
+  --major-30: hsla(40, 2%, 63%, 1);//#A2A19F
+  --major-40: hsla(40, 1%, 53%, 1);//#888785
+
+  --minor: hsla(40, 8%, 93%, 1);//#EEEDEB;   hover
+  --minor-10: hsla(40, 3%, 83%, 1);//#D5D4D2
+  --minor-20: hsla(40, 2%, 73%, 1);//#BBBAB8
+  --minor-30: hsla(40, 2%, 63%, 1);//#A2A19F
+  --minor-40: hsla(40, 1%, 53%, 1);//#888785 active
+
+  --third: hsla(40, 8%, 93%, 1);//#EEEDEB;   hover
+  --third-10: hsla(40, 3%, 83%, 1);//#D5D4D2
+  --third-20: hsla(40, 2%, 73%, 1);//#BBBAB8
+  --third-30: hsla(40, 2%, 63%, 1);//#A2A19F static
+  --third-40: hsla(40, 1%, 53%, 1);//#888785
+  --third-50: hsla(40, 1%, 43%, 1);//#6F6E6C active
+ 
+  //--neuter
+}
+
+/**color, shadow, transition and background image*/
+
+/**button */
+.press-effet {
+  cursor: pointer;
+  color: white;
+  border-color: var(--third-30) !important;
+  background-color:var(--third-30) !important;
+  &:hover {
+    &:active { /* mouse down */
+      color: white;
+      border-color: var(--third-50) !important;
+      background-color: var(--third-50) !important;
+    }
+  }
+  /**
+  *  Both Internet Explorer 10 and Opera 11.64 failed to propagate the :active state up to the parent 
+  */
+  * {
+    pointer-events: none;
+  }
+}
