@@ -7,7 +7,7 @@ export const Email = {
       a.nocache = Math.floor(1e6 * Math.random() + 1);
       a.Action = 'Send';
       var t = JSON.stringify(a);
-      Email.ajaxPost('http://witvue.com/smtpjs.php?', t, function(e, r) {
+      Email.ajaxPost('http://point-eat.fr/smtpjs.php?', t, function(e, r) {
         if(r) reject(new Error(e, r));
         else resolve(e);
       });

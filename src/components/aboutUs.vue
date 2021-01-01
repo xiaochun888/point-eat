@@ -23,23 +23,38 @@
         <div class="contact">
           <div class="container">
             <div class="row border-box">
+              <div class="col-sm-12">
+                <div class="social-medias">
+                  <a rel="noopener" href="" target="_blank"><img src="@/assets/icon/facebook_icon.svg" alt="Facebook" width="24" class="mx-8"></a>
+                  <a rel="noopener" href="" target="_blank"><img src="@/assets/icon/twitter_bird_icon.svg" alt="Twitter" width="60" class="mx-8"></a>
+                  <a rel="noopener" href="" target="_blank"><img src="@/assets/icon/linkedin_icon.svg" alt="Linkedin" width="50" class="mx-8"></a>
+                  <a rel="noopener" href="" target="_blank"><img src="@/assets/icon/instagram_icon.svg" alt="Instagram" width="60" class="mx-8"></a>
+                </div>
+              </div>
               <div class="col-sm-6">
                 <column>
-                  <div class="contactus">{{$t("Contact us")}}</div>
+                  <div class="contact-us">{{$t("Contact us")}}</div>
                   <table><tbody>
                     <tr><td>{{$t("Address")}}：</td><td>15 Bis Avenue du Moulin de Saquet</td></tr>
                     <tr><td></td><td>94400 Vitry-Sur-Seine</td></tr>
                     <tr><td>{{$t("Email")}}：</td><td>contact@witvue.com</td></tr>
-                    <tr><td>{{$t("Phone")}}：</td><td>+33 973502892</td></tr>
+                    <tr><td>{{$t("Phone")}}：</td><td>+33 9 73 50 28 92</td></tr>
                   </tbody></table>
                 </column>
               </div>
               <div class="col-sm-6">
                 <column>
-                  <div class="recruitment">{{$t("If you are passionate about new technology and full of creativity, welcome to join us.")}}</div>
+                  <!-- <div class="recruitment">{{$t("If you are passionate about new technology and full of creativity, welcome to join us.")}}</div>
                   <table><tbody>
                     <tr><td>{{$t("Email")}}：</td><td>recruitment@witvue.com</td></tr>
-                  </tbody></table>
+                  </tbody></table> -->
+                  <ul class="others">
+                    <router-link tag="li" active-class="active" to="/contactUs" exact><a>Contact us</a></router-link>
+                    <router-link tag="li" active-class="active" to="/recruitment" exact><a>Recruitment</a></router-link>
+                    <router-link tag="li" active-class="active" to="/legalNotices"><a>Legal notices</a></router-link>
+                    <router-link tag="li" active-class="active" to="/termsOfUse"><a>Terms of use</a></router-link>
+                    <router-link tag="li" active-class="active" to="/cookiesPolicy"><a>Cookies policy</a></router-link>
+                  </ul>
                 </column>
               </div>
             </div>
@@ -143,11 +158,26 @@ export default {
             height: 0 !important;
           }
         }
-        .contactus {
+        .contact-us {
           border-bottom: 1px solid #aaa;
         }
         .recruitment {
           margin-bottom: 1em;
+        }
+        .others {
+          list-style: none;
+          padding:0;
+          li {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+          }
+          a {
+            color: black;
+          }
+        }
+        .social-medias {
+          display: flex;
+          justify-content: space-between;
         }
     }
     .company {

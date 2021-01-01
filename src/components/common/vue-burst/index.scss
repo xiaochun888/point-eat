@@ -14,12 +14,15 @@
   .particles-wrapper {
     position: relative;
     overflow: hidden;
+    /**safari support*/
+    display: inline-block;
+    will-change: transform;
   }
 
   .particles-content {
     position: relative;
     cursor: pointer;
     background: #ddd;
-    // color: #fff;
+    will-change: transform;
   }
 }

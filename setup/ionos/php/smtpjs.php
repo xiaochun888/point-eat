@@ -1,17 +1,18 @@
 <?php
 /**XMLHttpRequest.send({}); */
 $_POST = json_decode(file_get_contents("php://input"), true) ?: [];
-if (isset($_POST['Subject']) && isset($_POST['Body'])) {
-  // $name = "Point Eat";
-  $to = "point-eat@witvue.com";
+if (isset($_POST['To']) && isset($_POST['Subject']) && isset($_POST['Body'])) {
+  $to = $_POST["To"];
   $subject = $_POST["Subject"];
   $body = $_POST["Body"];
+  $name = "Point Eat";
+  if(isset($_POST['Name'])) $name = $_POST['Name'];
 
   /**avoid spam
    * Date: / From:
   */
   $date  = date("D, j M Y H:i:s -0600");
-  $headers = "From: Point Eat <point-eat@witvue.com>\r\n";
+  $headers = "From: ".$name." <".$to.">\r\n";
   // $headers .="Reply-To: ".$name." <".$to.">\r\n";
   // $headers .= "Return-Path: ".$name." <".$to.">\r\n";
   // $headers .= "X-Priority: 3\r\n";

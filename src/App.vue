@@ -4,11 +4,11 @@
       <slim-scroll :touchScrollStep="10" :size="scrollBarWidth" :class="{'scrollBarWidth': !isTouchDevice}" alwaysVisible>
         <div class="app-header container">
           <div class="btn-group btn-group-justified app-header-menu " role="group" aria-label="...">
-            <div class="btn-group app-header-logo flex-center" @click="$router.push('/aboutus')">
-              <img src="@/assets/img/logo.png" />
+            <div class="btn-group app-header-logo flex-center" @click="$router.push('/')">
+              <img src="@/assets/img/point-eat.png" />
               <div class="company">
-                <div class="witvue">{{$t("witvue")}}</div>
-                <div class="slogan">{{$t("Make good life")}}</div>
+                <div class="name">{{$t("Point Eat")}}</div>
+                <div class="slogan">{{$t("Point while eating")}}</div>
               </div>
             </div>
             <div class="btn-group" role="group" v-for="(route, index) in routes" :key="index">
@@ -74,7 +74,11 @@ export default {
       }
     },
     routes () {
-      return this.$router.options.routes.filter(route => route.path != '*');
+      return this.$router.options.routes.filter(route => {
+        console.log('routes', route);
+        return ['point-eat', 'price-mini'].includes(route.component.name) && route.path != '*';
+        // return route.path != '*';
+      });
     },
     isTouchDevice() {
       return ('ontouchstart' in window) ||
@@ -144,7 +148,7 @@ export default {
         margin: 0.25em;
         margin-left: 0;
       }
-      .witvue {
+      .name {
         font-family: "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
         font-weight: 900;
         font-size: 1.3em;
@@ -240,7 +244,7 @@ export default {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
-    margin-left: 0.2em;
+    // margin-left: 0.2em;
   }
   .btn-group a {
     margin: 0px;

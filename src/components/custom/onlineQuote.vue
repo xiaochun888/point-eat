@@ -1,7 +1,8 @@
 <template lang="html">
   <div class="online-quote">
+    <div class="request">
     <div class="header">
-      <h3>{{$t('Ask for a quote')}}</h3>
+      <h3>{{$t("Request of quote")}}</h3>
     </div>
     <div class="client">
       <table>
@@ -20,7 +21,7 @@
           </td>
           <td class="empty"></td>
           <td class="type">
-            <select v-model="quote.client.type" @change="onChangeClientType" required>
+            <select v-model="quote.client.type" required>
               <option :value="null" disabled selected>{{'*' + $t(clientColumns.type.title)}}</option>
               <option v-for="(option, y) in clientColumns.type.options" :key="y" :value="option.value" :selected="option.value === quote.client.type">
                   {{$t(option.text)}}
@@ -35,7 +36,16 @@
         </tr>
       </table>
     </div>
+    <div class="software">
+      <span>{{$t("Software")}}:</span>
+      <select v-model="quote.software" required>
+        <option v-for="(option, y) in softwareEnum.toOptions()" :key="y" :value="option.value" :selected="option.value === quote.software">
+            {{$t(option.text)}}
+        </option>
+      </select>
+    </div>
     <div class="detail">
+      <span>{{$t("Hardware")}}:</span>
       <table class="table table-striped">
         <thead>
           <tr><th v-for="(col, key) in detailColumns" :key="key">{{$t(col.title)}}</th><th @click="onMinus"></th></tr>
@@ -44,7 +54,7 @@
           <tr v-for="(row, index) in quote.detail" :key="index">
             <td v-for="(col, key) in detailColumns" :key="key">
               <template v-if="!!col.options">
-                <select v-model="row[key]" @change="onChangeDetailType" required>
+                <select v-model="row[key]" required>
                   <option :value="null" disabled selected>{{$t('-- select a product --')}}</option>
                   <option v-for="(option, y) in col.options" :key="y" :value="option.value" :selected="option.value === row[key]">
                     {{$t(option.text)}}
@@ -62,10 +72,11 @@
           <tr><td v-for="(col, key) in detailColumns" :key="key"></td><td @click="onPlus">+</td></tr>
         </tfoot>
       </table>
-      <form @submit.prevent="onSubmit" id="form">
-        <input type="submit" :value="$t('Send')" id="submit" class="press-effet box-shadow"/>
-      </form>
     </div>
+    </div>
+    <form @submit.prevent="onSubmit" id="form">
+      <input type="submit" :value="$t('Send')" id="submit" class="press-effet box-shadow"/>
+    </form>
   </div>
 </template>
 <script lang="js">
@@ -73,6 +84,7 @@ import { Email } from '@/assets/js/smtp.js';
 import { objectDefault, cloneDeep, validateEmail } from '@/assets/js/app.utility.js';
 import { companyTypeEnum } from '@/assets/js/company.type.enum.js';
 import { productTypeEnum } from '@/assets/js/product.type.enum.js';
+import { softwareEnum } from '@/assets/js/software.enum.js';
 
 const clientDefine = {
   columns: {
@@ -99,14 +111,16 @@ export default {
     return {
       quote: {
         client: objectDefault(clientDefine.columns),
-        detail: []
+        detail: [],
+        software: softwareEnum.COMPLETE
       },
       lastQuote: null
     };
   },
   computed: {
     clientColumns: () => clientDefine.columns,
-    detailColumns: () => detailDefine.columns
+    detailColumns: () => detailDefine.columns,
+    softwareEnum: () => softwareEnum
   },
   methods: {
     isOverflown(element) {
@@ -117,10 +131,6 @@ export default {
       if(this.isOverflown(event.currentTarget)) {
         value[field] = value[field].slice(0, -1);
       }
-    },
-    onChangeClientType() {
-    },
-    onChangeDetailType() {
     },
     onMinus(index) {
       this.quote.detail.splice(index, 1);
@@ -135,6 +145,7 @@ export default {
       for(let key in quote.client) {
         html += '<li>' + key + ': ' + quote.client[key] + '</li>';
       }
+      html += '<li>' + this.$t('Software') + ': ' + quote.software + '</li>';
       html += '</ul>';
 
       if(quote.detail.length) {
@@ -161,6 +172,7 @@ export default {
       quote.detail.forEach(item => {
         item.product = productTypeEnum.toText(item.product);
       });
+      quote.software = softwareEnum.toText(quote.software);
 
       if (quote.client.name &&
           quote.client.phone &&
@@ -175,6 +187,7 @@ export default {
 
           const today = new Date();
           Email.send({
+            To: 'sales@point-eat.fr',
             Subject : 'Quote at ' + today.toUTCString(),
             Body : this.toHTML(quote)
           }).then(() => {
@@ -198,7 +211,6 @@ export default {
 .online-quote {
   width: 100%;
   height: 100%;
-
   textarea {
     display: block;
     width: 100%;
@@ -255,125 +267,151 @@ export default {
       padding-left: 1em;
     }
   }
-
-  .header {
-    border-bottom: 1px solid;
+  .request {
     padding: 1em;
-    text-align: center;
-  }
+    border: 1px solid var(--third-30);
+    margin-bottom: 1em;
 
-  .client {
-    width: 100%;
-    font-size: 0.9em;
-    margin-top: 1em;
-    table {
-      width: 90%;
-      tr, td {
-        height: 2.5em;
-        // line-height: 1.25em;
-        border: 0;
-      }
-      td {
-        border-bottom: 1px solid #ddd;
-      }
-      td.empty {
-        border: 0;
-        width: 10%;
-      }
-    }
-
-    .name, .email {
-      width: 50%;
-    }
-    .phone, .type {
-      width: 40%;
-    }
-    .message,
-    .address {
-      /**colspan border bug */
-      border-top: 1px solid white;
-      textarea::-webkit-input-placeholder {
-        color: #aaa;
-      }
-
-      textarea:-moz-placeholder { /* Firefox 18- */
-        color: #aaa;
-      }
-
-      textarea::-moz-placeholder {  /* Firefox 19+ */
-        color: #aaa;
-      }
-
-      textarea:-ms-input-placeholder {
-        color: #aaa;
-      }
-
-      textarea::placeholder {
-        color: #aaa;
-      }
-    }
-  }
-  .detail {
-    width: 100%;
-    margin-top: 2em;
-    table {
-      width: 100%;
-      table-layout: fixed;
+    .header {
+      padding: 1em;
       text-align: center;
+      color: white;
+      background-color: var(--third-30);
+    }
+    .client {
+      width: 100%;
+      font-size: 0.9em;
+      margin-top: 1em;
+      table {
+        width: 90%;
+        tr, td {
+          height: 2.5em;
+          // line-height: 1.25em;
+          border: 0;
+        }
+        td {
+          border-bottom: 1px solid #ddd;
+        }
+        td.empty {
+          border: 0;
+          width: 10%;
+        }
+      }
 
-      select,
-      input {
-        width: 100%;
-        height: 100%;
+      .name, .email {
+        width: 50%;
+      }
+      .phone, .type {
+        width: 40%;
+      }
+      .message,
+      .address {
+        /**colspan border bug */
+        border-top: 1px solid white;
+        textarea::-webkit-input-placeholder {
+          color: #aaa;
+        }
+
+        textarea:-moz-placeholder { /* Firefox 18- */
+          color: #aaa;
+        }
+
+        textarea::-moz-placeholder {  /* Firefox 19+ */
+          color: #aaa;
+        }
+
+        textarea:-ms-input-placeholder {
+          color: #aaa;
+        }
+
+        textarea::placeholder {
+          color: #aaa;
+        }
+      }
+    }
+    .software {
+      margin-top: 2em;
+      width: 40%;
+      span {
+        margin-left: 1em;
+      }
+
+      select {
+        background-color: var(--third-30);
+        color: white;
         border: 0px;
         padding: 0px;
         margin: 0px;
         outline: none;
-        text-align: center;
         cursor: pointer;
-        background-color: transparent;
-      }
-      select {
         padding-left: 1em;
       }
-      th:last-child,
-      td:last-child {
-        width: 3em;
-        border-right: 0;
-        cursor: pointer;
-      }
-      tr, th, td {
-        padding: 0;
-      }
-      thead {
-        background: #aaa;
-        color: white;
-        th {
-          border-right: 1px solid #ddd;
-        }
-      }
-      tbody {
-        td {
-          border-right: 1px solid #ddd;
-        }
-      }
     }
-
-    #form {
+    .detail {
       width: 100%;
-      #submit {
-        display: block;
-        margin: auto;
-        border-radius: 4px;
-        outline: none;
-        border-style: none;
-        padding: 0.25em;
-        &:active {
-          outline: none !important;
+      margin-top: 1em;
+      span {
+        margin-left: 1em;
+      }
+      table {
+        width: 100%;
+        table-layout: fixed;
+        text-align: center;
+
+        select,
+        input {
+          width: 100%;
+          height: 100%;
+          border: 0px;
+          padding: 0px;
+          margin: 0px;
+          outline: none;
+          text-align: center;
+          cursor: pointer;
+          background-color: transparent;
+        }
+        select {
+          padding-left: 1em;
+        }
+        th:last-child,
+        td:last-child {
+          width: 3em;
+          border-right: 0;
+          cursor: pointer;
+        }
+        tr, th, td {
+          padding: 0;
+        }
+        thead {
+          background-color: var(--third-30);
+          color: white;
+          th {
+            border-right: 1px solid #ddd;
+          }
+        }
+        tbody {
+          td {
+            border-right: 1px solid #ddd;
+          }
         }
       }
+
     }
   }
 
+  #form {
+    width: 100%;
+    #submit {
+      display: block;
+      margin: auto;
+      border-radius: 4px;
+      outline: none;
+      border-style: none;
+      padding: 0.25em;
+      &:active {
+        outline: none !important;
+      }
+    }
+  }
 }
 </style>
