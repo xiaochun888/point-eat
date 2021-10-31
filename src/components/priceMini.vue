@@ -26,7 +26,7 @@
       <column>
         <div>{{$t("There are three suites of software in choice:")}}</div>
         <ul>
-          <li>{{$t("Cash desk")}}</li>
+          <li>{{$t("Cashier system")}}</li>
           <li>{{$t("Ordering system")}}</li>
           <li>{{$t("Storage system")}}</li>
         </ul>

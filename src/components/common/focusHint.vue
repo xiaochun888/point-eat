@@ -36,6 +36,7 @@ export default {
     border-bottom: 1px solid #fe5815;
   }
   td {
+      border: 0;
       padding: 0;
       height: 3.9em;
       line-height: 1.3em;

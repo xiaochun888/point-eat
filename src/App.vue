@@ -147,7 +147,7 @@ export default {
       img {
         width: 2.5em;
         height: 2.5em;
-        margin: 0 0.25em;
+        margin: 0.25em 0;
       }
       .name {
         font-family: "Microsoft YaHei", "Hiragino Sans GB", sans-serif;

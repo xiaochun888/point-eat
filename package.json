@@ -1,7 +1,7 @@
 {
-  "name": "witvue",
+  "name": "point-eat",
   "version": "1.0.0",
-  "description": "witvue site",
+  "description": "Point eat",
   "author": "Xiaochun ZHONG <xiaochun.zhong@hotmail.com>",
   "private": true,
   "scripts": {
