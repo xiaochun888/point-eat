@@ -1,11 +1,10 @@
 <template>
-<div class="price-mini container">
-  <swiper :paginate="false" :mousewheel="false" direction="horizontal" :autoplaySpeed="6000" autoplay loop>
+<div class="price-mini">
+  <swiper :paginate="false" :mousewheel="false" direction="horizontal" :autoplaySpeed="2000" autoplay loop>
     <!-- Add &nbsp; for IE to get width of slide -->
     <lazy-div cls="bar">&nbsp;</lazy-div>
     <lazy-div cls="buffet">&nbsp;</lazy-div>
     <lazy-div cls="canteen">&nbsp;</lazy-div>
-    <!-- <lazy-div cls="fastfood">&nbsp;</lazy-div> -->
     <lazy-div cls="restaurant">&nbsp;</lazy-div>
     <lazy-div cls="snack">&nbsp;</lazy-div>
   </swiper>
@@ -29,24 +28,21 @@
         <ul>
           <li>{{$t("Cash desk")}}</li>
           <li>{{$t("Ordering system")}}</li>
-          <li>{{$t("Cash desk + Ordering system")}}</li>
+          <li>{{$t("Storage system")}}</li>
         </ul>
       </column>
     </div>
   </div>
-  <div>{{$t("According to the actual situation or need, you can purchase the server, printer or other devices separately, or just rent a software suite. For more details, please contact us.")}}</div>
+  <div>{{$t("According to the actual situation or need, you can purchase the server, printer or other devices separately, or just rent a software service. For more details, please contact us.")}}</div>
   <table class="contact"><tbody>
     <tr><td>{{$t("Email")}}：</td><td>sales@point-eat.fr</td></tr>
-    <!-- <tr><td>{{$t("Sales")}}：</td><td>+33 9 73 50 28 92</td></tr> -->
-    <tr><td>{{$t("Sales")}}：</td><td>+33 9 83 48 58 02</td></tr>
+    <tr><td>{{$t("Sales")}}：</td><td>+33 9 73 50 28 92</td></tr>
+    <!-- <tr><td>{{$t("Sales")}}：</td><td>+33 9 83 48 58 02</td></tr> -->
   </tbody></table>
-  <div class="quote"></div>
-  <online-quote></online-quote>
   <app-footer></app-footer>
 </div>
 </template>
 <script lang="js">
-import onlineQuote from '@/components/custom/onlineQuote.vue';
 import swiper from '@/components/common/swiper';
 import lazyDiv from '@/components/common/lazyDiv.vue';
 import column from '@/components/common/column.vue';
@@ -55,7 +51,6 @@ import appFooter from '@/components/appFooter.vue';
 export default {
   name: 'price-mini',
   components: {
-    onlineQuote,
     swiper,
     lazyDiv,
     column,
@@ -120,17 +115,11 @@ export default {
       ul {
         margin: 0;
         margin-top: 1em;
-        // background-color: #ddd;
       }
     }
   }
   .contact {
     margin: 1em;
-  }
-  .quote {
-    border-top: 1px solid #fe5815;
-    margin-top: 2em;
-    margin-bottom: 2em;
   }
 }
 </style>

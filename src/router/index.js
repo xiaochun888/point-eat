@@ -1,11 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import pointEat from '@/components/products/pointEat';
-import aboutUs from '@/components/aboutUs';
-import contactUs from '@/components/contactUs';
-import recruitment from '@/components/recruitment';
+import exhibition from '@/components/products/exhibition';
 import legalNotices from '@/components/legalNotices';
-import termsOfUse from '@/components/termsOfUse';
 import cookiesPolicy from '@/components/cookiesPolicy';
 import priceMini from '@/components/priceMini';
 
@@ -16,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Our solutions',
-      component: pointEat
+      name: 'Exhibition',
+      component: exhibition
     },
     {
       path: '/priceMini',
@@ -25,24 +21,9 @@ export default new Router({
       component: priceMini
     },
     {
-      path: '/contactUs',
-      name: 'Contact us',
-      component: contactUs
-    },
-    {
-      path: '/recruitment',
-      name: 'Recruitment',
-      component: recruitment
-    },
-    {
       path: '/legalNotices',
       name: 'Legal Notices',
       component: legalNotices
-    },
-    {
-      path: '/termsOfUse',
-      name: 'Terms Of use',
-      component: termsOfUse
     },
     {
       path: '/cookiesPolicy',
@@ -50,6 +31,6 @@ export default new Router({
       component: cookiesPolicy
     },
     /**History mode avoids 404 error */
-    { path: '*', component: aboutUs }
+    { path: '*', component: exhibition }
   ]
 });

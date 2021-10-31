@@ -1,5 +1,5 @@
 <template>
-  <div class="point-eat container">
+  <div class="point-eat">
     <div class="introduct">
       <burst :options="particles" ref="burst">
         <div>{{$t("Need to decrease servers?")}}</div>
@@ -26,7 +26,7 @@
           </div>
           <div class="col-sm-6 features">
             <div class="caption">{{$t("Features")}}</div>
-            <grid-container :layout.sync="layout" :gridSize="{w:90, h:60}" bubbleUp>
+            <grid-container :layout.sync="layout" :gridSize="{w:90, h:60}" bubbleUp pinned>
               <grid-box
                 v-for="(slide, index) in features"
                 :boxId="index"
@@ -56,7 +56,7 @@
       </focus-hint>
     </div>
     <div class="experience">
-      <focus-hint>{{$t("Simple and fine experience")}}<div slot="hint">{{$t("Paginated, sliding and responsive design")}}</div>
+      <focus-hint>{{$t("Simple fast and fine experience")}}<div slot="hint">{{$t("Paginated, sliding and responsive design")}}</div>
         <div slot="pave" class="row border-box">
           <div class="col-sm-12 header">
             <div>{{$t("Designed by professional graphist, in very few colors so as not to dazzle you, with very few buttons to keep screen looking very neat, just click without search. Using pagination, sliding and responsive layout technology, it is easy to manipulate on smartphone in single hand. Sliding as Youtube or Tiktok, writing as Excel whithout popup window, touching as if on paper or post-it, it is so easy to use that you don't need time to learn.")}}</div>
@@ -90,18 +90,18 @@
               <div>{{$t("The cashier software is certified, the public demo version is free to download and try out, just click the link below.")}}</div>
               <div class="demo-link"><a href="http://demo.point-eat.fr">http://demo.point-eat.fr</a></div>
               <div></div>
-              <div>{{$t('This is a version with some settings for demonstration but no server, so neither the functions for communication nor the reports of receipt and income can work in this version.')}}</div>
+              <!-- <div>{{$t('This is a version with some settings for demonstration but no server, so neither the functions for communication nor the reports of receipt and income can work in this version.')}}</div> -->
             </column>
           </div>
           <div class="col-sm-6">
             <column>
-              <div>{{$t("A team of hotline technicians is there to answer your questions accompanying you 7 days a week.")}}</div>
+              <div>{{$t("The hotline technical team will answer your questions every day.")}}</div>
               <table><tbody>
                 <tr><td>{{$t("Email")}}：</td><td>hotline@point-eat.fr</td></tr>
                 <tr><td>{{$t("Phone")}}：</td><td>+33 9 83 48 58 02</td></tr>
               </tbody></table>
               <div class="quote">
-                <router-link to="/priceMini"><a>{{$t("Ask for a quote directly online.")}}</a></router-link>
+                <router-link to="/priceMini"><a>{{$t("Ask for a quote directly.")}}</a></router-link>
               </div>
             </column>
           </div>
@@ -347,7 +347,6 @@ export default {
     }
     .product {
       .legend {
-        position: relative;
         width: 100%;
         height: 1.5em;
         img {

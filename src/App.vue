@@ -2,35 +2,37 @@
   <div id="app" class="app">
     <div class="makeScrollable">
       <slim-scroll :touchScrollStep="10" :size="scrollBarWidth" :class="{'scrollBarWidth': !isTouchDevice}" alwaysVisible>
-        <div class="app-header container">
-          <div class="btn-group btn-group-justified app-header-menu " role="group" aria-label="...">
-            <div class="btn-group app-header-logo flex-center" @click="$router.push('/')">
-              <img src="@/assets/img/point-eat.png" />
-              <div class="company">
-                <div class="name">{{$t("Point Eat")}}</div>
-                <div class="slogan">{{$t("Point while eating")}}</div>
+        <div class="container">
+          <div class="app-header">
+            <div class="btn-group btn-group-justified app-header-menu " role="group" aria-label="...">
+              <div class="btn-group app-header-logo flex-center" @click="$router.push('/')">
+                <img src="@/assets/img/point-eat.png" />
+                <div class="company">
+                  <div class="name">{{$t("Point Eat")}}</div>
+                  <div class="slogan">{{$t("Point while eating")}}</div>
+                </div>
+              </div>
+              <div class="btn-group" role="group" v-for="(route, index) in routes" :key="index">
+                <router-link class="btn btn-default noselect square-radius" :to="route">{{$t(route.name)}}</router-link>
+              </div>
+              <div class="btn-group flex-center" role="group">
+                <click-popover>
+                  <img slot="head" :src="flagPath(languageOption)">
+                  <span slot="head">{{languageOption.text}}</span>
+                  <div  slot="body" v-for="(option, index) in i18nDefineEnum.toOptions()" :key="index"
+                      class="click-popover-option select-option"
+                      @click="onClickLanguageOption(option)">
+                    <table><tbody><tr>
+                      <td><img :src="flagPath(option)"></td>
+                      <td>{{option.text}}</td>
+                    </tr></tbody></table>
+                  </div>
+                </click-popover>
               </div>
             </div>
-            <div class="btn-group" role="group" v-for="(route, index) in routes" :key="index">
-              <router-link class="btn btn-default noselect square-radius" :to="route">{{$t(route.name)}}</router-link>
-            </div>
-            <div class="btn-group flex-center" role="group">
-              <click-popover>
-                <img slot="head" :src="flagPath(languageOption)">
-                <span slot="head">{{languageOption.text}}</span>
-                <div  slot="body" v-for="(option, index) in i18nDefineEnum.toOptions()" :key="index"
-                    class="click-popover-option select-option"
-                    @click="onClickLanguageOption(option)">
-                  <table><tbody><tr>
-                    <td><img :src="flagPath(option)"></td>
-                    <td>{{option.text}}</td>
-                  </tr></tbody></table>
-                </div>
-              </click-popover>
-            </div>
           </div>
+          <router-view />
         </div>
-        <router-view />
       </slim-scroll>
     </div>
   </div>
@@ -76,7 +78,7 @@ export default {
     routes () {
       return this.$router.options.routes.filter(route => {
         console.log('routes', route);
-        return ['point-eat', 'price-mini'].includes(route.component.name) && route.path != '*';
+        return ['exhibition', 'price-mini'].includes(route.component.name) && route.path != '*';
         // return route.path != '*';
       });
     },
@@ -143,15 +145,15 @@ export default {
     &-logo {
       margin-left: 0 !important;
       img {
-        width: 3em;
-        height: 3em;
+        width: 2.5em;
+        height: 2.5em;
         margin: 0.25em;
         margin-left: 0;
       }
       .name {
         font-family: "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
         font-weight: 900;
-        font-size: 1.3em;
+        font-size: 1em;
         white-space: nowrap;
         margin-right: 0.25em;
       }

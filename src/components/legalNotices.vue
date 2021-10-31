@@ -1,5 +1,5 @@
 <template>
-<div class="legal-notices container">
+<div class="legal-notices">
   <div class="content">
   <br>
   <p>

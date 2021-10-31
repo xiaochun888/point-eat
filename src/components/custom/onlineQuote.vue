@@ -112,7 +112,7 @@ export default {
       quote: {
         client: objectDefault(clientDefine.columns),
         detail: [],
-        software: softwareEnum.COMPLETE
+        software: softwareEnum.WAREHOUSING_SYSTEM
       },
       lastQuote: null
     };

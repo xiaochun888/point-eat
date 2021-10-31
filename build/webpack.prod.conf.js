@@ -134,8 +134,17 @@ const webpackConfig = merge(baseWebpackConfig, {
     // copy custom img assets
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../src/assets/img'), 
-        to: 'assets/img',
+        from: path.resolve(__dirname, '../src/assets/img/scenes'), 
+        to: 'assets/img/scenes',
+        ignore: ['.*']
+      } 
+    ]),
+
+    // copy custom img assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../src/assets/img/mini_server.png'), 
+        to: 'assets/img/mini_server.png',
         ignore: ['.*']
       } 
     ]),

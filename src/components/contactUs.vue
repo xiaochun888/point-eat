@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="contact-us container">
+  <div class="contact-us">
     <div class="header">
       <h3>{{$t('Contact us')}}</h3>
     </div>
@@ -266,8 +266,4 @@ export default {
   }
 
 }
-  .contact {
-    margin: 1em;
-  }
-
 </style>

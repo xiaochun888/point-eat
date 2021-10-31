@@ -7,14 +7,14 @@
       <a rel="noopener" href="" target="_blank"><img src="@/assets/icon/instagram_icon.svg" alt="Instagram" width="60"></a>
     </div> -->
     <ul class="others">
-      <router-link tag="li" active-class="active" to="/contactUs"><a>{{$t("Contact us")}}</a></router-link>
+      <!-- <router-link tag="li" active-class="active" to="/contactUs"><a>{{$t("Contact us")}}</a></router-link> -->
       <!-- <router-link tag="li" active-class="active" to="/recruitment"><a>{{$t("Recruitment")}}</a></router-link> -->
       <router-link tag="li" active-class="active" to="/legalNotices"><a>{{$t("Legal notices")}}</a></router-link>
       <!-- <router-link tag="li" active-class="active" to="/termsOfUse"><a>{{$t("Terms of use")}}</a></router-link> -->
       <router-link tag="li" active-class="active" to="/cookiesPolicy"><a>{{$t("Cookies policy")}}</a></router-link>
     </ul>
     <div class="copyright">
-      @2020 {{$t("Point Eat")|capitalize}}
+      @2021 {{$t("Point Eat")|capitalize}}
     </div>
     <cookie-law theme="dark-lime--rounded" :buttonText="acceptText">
       <div slot="message">{{$t('Continuing on this site, you accept the use of cookies to allow us to improve your user experience.')}}</div>

@@ -1,12 +1,12 @@
 <template>
-<div class="cookies-policy container">
+<div class="cookies-policy">
   <div class="content">
   <br>
 	<h2>Déclaration relative aux Cookies</h2>
   <p>Point Eat utilise des cookies, des trackers, des scripts et des boutons de média sociaux sur ses sites web et ses applications (ci-après ensemble&nbsp;: les technologies) pour nous aider à offrir une expérience meilleure, plus rapide et plus sécurisée. Ces technologies sont également mises en place par des tiers qui sont contractés par Point Eat. Nous sommes en effet très préoccupés par la protection de votre vie privée face à ces technologies. Pour plus d’information sur la manière dont nous traitons vos données à caractère personnel, nous renvoyons volontiers à notre déclaration en matière de vie privée.</p>
   <p>Nous souhaitons à l’aide de cette déclaration relative aux cookies vous expliquer quelles sont les technologies que nous utilisons et le motif pour lequel nous les utilisons. Si vous avez encore des questions sur l’utilisation des technologies et sur la préservation de la vie privée dans le cadre des technologies, vous pouvez prendre contact par <a href="mailto:contact@point-eat.fr">contact@point-eat.fr</a>.</p>
-  <h2>Quelles sont les technologies que nous utilisons possiblement?</h2>
-  <p>Comme mentionné ci-dessus, nous possiblement utilisons différentes technologies pour collecter les données comme des scripts, des trackers et des cookies. Les technologies possiblement utilisées vous sont expliquées ci-dessous.</p>
+  <h2>Quelles sont les technologies que nous utilisons?</h2>
+  <p>Comme mentionné ci-dessus, nous utilisons différentes technologies pour collecter les données comme des scripts, des trackers et des cookies. Les technologies possiblement utilisées vous sont expliquées ci-dessous.</p>
   <p>1. <i>Qu’est-ce qu'un script?</i></p>
   <p>Un script est un bloc de code de programmation utilisé pour que notre site web fonctionne bien et soit interactif. Ce code peut être placé sur notre serveur ou sur votre appareil.</p>
   <p>2. <i>Qu’est-ce qu'un tracker?</i></p>
@@ -77,7 +77,7 @@
   </p>
 
   <p>
-  Cette déclaration relative aux Cookies peut être adaptée et a été adaptée pour la dernière fois le  24/08/2020.
+  Cette déclaration relative aux Cookies peut être adaptée et a été adaptée pour la dernière fois le  31/10/2020.
   </p>
   </div>
   <app-footer></app-footer>
