@@ -36,7 +36,6 @@ export default {
     border-bottom: 1px solid #fe5815;
   }
   td {
-      border: 0;
       padding: 0;
       height: 3.9em;
       line-height: 1.3em;
@@ -50,8 +49,9 @@ export default {
     cursor: pointer;
   }
   .form {
-    border-top: 3.9em solid transparent;
-    border-left: 3.9em solid #fe5815;
+    /**For Wechat browser: 3.9em + 0.1em */
+    border-top: 4em solid transparent;
+    border-left: 4em solid #fe5815;
     cursor: pointer;
   }
   .hint {
