@@ -37,9 +37,9 @@ export default {
   }
   td {
       padding: 0;
-      height: 2.6em;
+      height: 3.9em;
       line-height: 1.3em;
-      max-height: 2.6em;
+      max-height: 3.9em;
   }
   .focus {
     background-color:#fe5815;
@@ -49,8 +49,8 @@ export default {
     cursor: pointer;
   }
   .form {
-    border-top: 2.6em solid transparent;
-    border-left: 2.6em solid #fe5815;
+    border-top: 3.9em solid transparent;
+    border-left: 3.9em solid #fe5815;
     cursor: pointer;
   }
   .hint {

@@ -147,20 +147,19 @@ export default {
       img {
         width: 2.5em;
         height: 2.5em;
-        margin: 0.25em;
-        margin-left: 0;
+        margin: 0 0.25em;
       }
       .name {
         font-family: "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
         font-weight: 900;
         font-size: 1em;
         white-space: nowrap;
-        margin-right: 0.25em;
+        margin-right: 0.5em;
       }
       .slogan {
         font-size: 0.5em;
         white-space: nowrap;
-        margin-right: 0.25em;
+        margin-right: 0.5em;
       }
     }
     .click-popover {

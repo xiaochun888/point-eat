@@ -11,7 +11,7 @@
       </burst>
       <div class="product">
         <div class="legend"><span class="text">{{$t("Wireless, contactless, tailor-made")}}</span></div>
-        <div class="caption">{{$t("Mini payment and ordering server")}}</div>
+        <div class="caption">{{$t("Mini cashier and ordering server")}}</div>
         <div class="subtitle">{{$t("For restaurants, fast food, snacks, bars, buffets, canteens, ...")}}</div>
         <div class="subtitle">{{$t("Support iPhone, iPad, Android phone, Android tablet, touchscreen, TV set, ...")}}</div>
         <lazy-img class="mini_server" src="assets/img/mini_server.png" />

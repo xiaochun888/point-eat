@@ -11,7 +11,7 @@
       </burst>
       <div class="product">
         <div class="legend"><span class="text">{{$t("Wireless, contactless, screen as choice")}}</span></div>
-        <span class="caption">{{$t("Mini payment and ordering server")}}</span>
+        <span class="caption">{{$t("Mini cashier and ordering server")}}</span>
         <div class="subtitle">{{$t("For restaurants, fast food, snacks, bars, buffets, canteens, ...")}}</div>
         <lazy-img class="stick_hand" src="assets/img/products/stick_hand.jpg" />
         <div class="subtitle">{{$t("Support iPhone, iPad, Android phone, Android tablet, touchscreen, TV set, ...")}}</div>
