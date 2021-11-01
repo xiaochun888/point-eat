@@ -2,23 +2,22 @@
   <div class="point-eat">
     <div class="introduct">
       <burst :options="particles" ref="burst">
-        <div>{{$t("Need to decrease servers?")}}</div>
-        <div>{{$t("Need a certificated cashier device?")}}</div>
-        <div>{{$t("Need to order a meal wirelessly and contactlessly?")}}</div>
-        <div>{{$t("Want to attract more guests?")}}</div>
-        <div>{{$t("Want to avoid the queue of clients?")}}</div>
+        <div>{{$t("Reduce waiters by more than 50%")}}</div>
+        <div>{{$t("Increase table use rate")}}</div>
+        <div>{{$t("Urge clients to spend")}}</div>
+        <div>{{$t("Expand repeat clients")}}</div>
         <div class="clickhere">{{$t("Click here")}}</div>
       </burst>
       <div class="product">
         <div class="legend"><span class="text">{{$t("Wireless, contactless, tailor-made")}}</span></div>
         <div class="caption">{{$t("Mini cashier and ordering server")}}</div>
         <div class="subtitle">{{$t("For restaurants, fast food, snacks, bars, buffets, canteens, ...")}}</div>
-        <div class="subtitle">{{$t("Support iPhone, iPad, Android phone, Android tablet, touchscreen, TV set, ...")}}</div>
+        <div class="subtitle">{{$t("Support iPhone, iPad, Android phone, Android tablet, touchscreen, ...")}}</div>
         <lazy-img class="mini_server" src="assets/img/mini_server.png" />
       </div>
     </div>
     <div class="experience">
-      <focus-hint>{{$t("Exquisite, Simple and fast")}}<div slot="hint">{{$t("Paginated, sliding and professional")}}</div>
+      <focus-hint>{{$t("Exquisite, Simple and fast")}}<div slot="hint">{{$t("Paginated, sliding and professional design")}}</div>
         <div slot="pave" class="border-box">
           <div class="row">
             <div class="col-sm-12">
@@ -27,6 +26,7 @@
             </div>
             <div class="col-sm-12">
               <div class="text">{{$t("Sliding as Youtube or Tiktok, writing as Excel whithout popup window, touching as if on paper or post-it, it's so simple and fast that you can operate in single hand on smartphone, you don't need time to learn.")}}</div>
+              <div class="text">{{$t("Place orders quickly to the kitchen to improve the quality of service and dramatically reduce the labor of waiters.")}}</div>
             </div>
           </div>
         </div>
@@ -40,13 +40,16 @@
               <span class="slogan animated slideInRight">{{$t("Point while eating")}}</span>
               <lazy-img class="image" src="assets/img/scenes/eating_order.jpg" />
             </div>
+            <div class="col-sm-12">
+              <div class="text">{{$t("Introduce special dishes and new dishes, remind automatically for dish serving, urging client and table clearance to increase quickly turnover.")}}</div>
+            </div>
           </div>
           <div class="row scenes">
             <div class="col-sm-5 scene">
               <lazy-img class="image" src="assets/img/scenes/client_order.png" />
             </div>
             <div class="col-sm-7 scene">
-              <span>{{$t("Ordering on a smartphone, nothing to be installed, it is sufficient to use the browser by entering the URL or scanning the QR code. The client can delete and modify the order at any time. After the order is submitted, he will receive the cooking notification from the kitchen.")}}</span>
+              <span>{{$t("Ordering on a smartphone, nothing to be installed, it is sufficient to use the browser by entering the URL or scanning the QR code. The client can delete and modify the order at any time, after the order is submitted, he will receive the cooking notification from the kitchen.")}}</span>
             </div>
             <div class="col-sm-5 scene">
               <lazy-img class="image" src="assets/img/scenes/order_kiosk.png" />
