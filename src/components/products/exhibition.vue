@@ -67,7 +67,7 @@
               <lazy-img class="image" src="assets/img/scenes/kitchen_postits.png" />
             </div>
             <div class="col-sm-7 scene">
-              <span>{{$t("All orders are displayed and clickable on the kitchen screen. The chef can send cooking notifications to clients and all waiters.")}}</span>
+              <span>{{$t("All orders are displayed and clickable on the kitchen screen. The chef can centralize cooking of the same dishes, and send cooking notifications to the clients and all the waiters.")}}</span>
             </div>
             <div class="col-sm-5 scene">
               <lazy-img class="image" src="assets/img/scenes/takeway_postits.png" />
