@@ -4,7 +4,7 @@
       <burst :options="particles" ref="burst">
         <div>{{$t("Reduce waiters by more than 50%")}}</div>
         <div>{{$t("Increase table use rate")}}</div>
-        <div>{{$t("Urge clients to spend")}}</div>
+        <div>{{$t("Increase client consumption")}}</div>
         <div>{{$t("Expand repeat clients")}}</div>
         <div class="clickhere">{{$t("Click here")}}</div>
       </burst>
@@ -41,7 +41,7 @@
               <lazy-img class="image" src="assets/img/scenes/eating_order.jpg" />
             </div>
             <div class="col-sm-12">
-              <div class="text">{{$t("Introduce special dishes and new dishes, remind automatically for dish serving, urging client and table clearance to increase quickly turnover.")}}</div>
+              <div class="text">{{$t("Introduce special dishes and new dishes, remind automatically for dish serving, order completed and table clearance to increase quickly turnover.")}}</div>
             </div>
           </div>
           <div class="row scenes">
@@ -67,7 +67,7 @@
               <lazy-img class="image" src="assets/img/scenes/kitchen_postits.png" />
             </div>
             <div class="col-sm-7 scene">
-              <span>{{$t("All orders are displayed and clickable on the kitchen screen. The chef can centralize cooking of the same dishes, and send cooking notifications to the clients and all the waiters.")}}</span>
+              <span>{{$t("All orders are displayed and clickable on the kitchen screen. The chef can centralize cooking of the same dishes, and send cooking messages to the clients and all the waiters.")}}</span>
             </div>
             <div class="col-sm-5 scene">
               <lazy-img class="image" src="assets/img/scenes/takeway_postits.png" />
