@@ -49,7 +49,7 @@
               <lazy-img class="image" src="assets/img/scenes/client_order.png" />
             </div>
             <div class="col-sm-7 scene">
-              <span>{{$t("Ordering on a smartphone, nothing to be installed, it is sufficient to use the browser by entering the URL or scanning the QR code. The client can delete and modify the order at any time, after the order is submitted, he will receive the cooking notification from the kitchen.")}}</span>
+              <span>{{$t("Ordering on a smartphone, nothing to be installed, it is sufficient to use the browser by entering the URL or scanning the QR code. After the order is submitted, he will receive the cooking messages from the kitchen. The client can delete and modify the order at any time.")}}</span>
             </div>
             <div class="col-sm-5 scene">
               <lazy-img class="image" src="assets/img/scenes/order_kiosk.png" />
@@ -67,7 +67,7 @@
               <lazy-img class="image" src="assets/img/scenes/kitchen_postits.png" />
             </div>
             <div class="col-sm-7 scene">
-              <span>{{$t("All orders are displayed and clickable on the kitchen screen. The chef can centralize cooking of the same dishes, and send cooking messages to the clients and all the waiters.")}}</span>
+              <span>{{$t("All orders are displayed, clickable and movable on the kitchen screen. The chef can centralize cooking of the same dishes, and send cooking messages to the clients and all the waiters.")}}</span>
             </div>
             <div class="col-sm-5 scene">
               <lazy-img class="image" src="assets/img/scenes/takeway_postits.png" />
