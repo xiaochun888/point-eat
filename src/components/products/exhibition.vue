@@ -9,7 +9,7 @@
         <div class="clickhere">{{$t("Click here")}}</div>
       </burst>
       <div class="product">
-        <div class="legend"><span class="text">{{$t("Wireless, contactless, tailor-made")}}</span></div>
+        <div class="legend"><span class="text">{{$t("No wires, no contact, no downloads, any screen")}}</span></div>
         <div class="caption">{{$t("Mini cashier and ordering server")}}</div>
         <div class="subtitle">{{$t("For restaurants, fast food, snacks, bars, buffets, canteens, ...")}}</div>
         <div class="subtitle">{{$t("Support iPhone, iPad, Android phone, Android tablet, touchscreen, ...")}}</div>
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="experience">
-      <focus-hint>{{$t("Exquisite, Simple and fast")}}<div slot="hint">{{$t("Paginated, sliding and professional design")}}</div>
+      <focus-hint>{{$t("Exquisite, Simple and fast")}}<div slot="hint">{{$t("No need to learn, get started right away")}}</div>
         <div slot="pave" class="border-box">
           <div class="row">
             <div class="col-sm-12">
@@ -26,7 +26,7 @@
             </div>
             <div class="col-sm-12">
               <div class="text">{{$t("Sliding as Youtube or Tiktok, writing as Excel whithout popup window, touching as if on paper or post-it, it's so simple and fast that you can operate in single hand on smartphone, you don't need time to learn.")}}</div>
-              <div class="text">{{$t("Place orders quickly to the kitchen to improve the quality of service and dramatically reduce the labor of waiters.")}}</div>
+              <div class="text">{{$t("Place orders quickly to the kitchen, it improves the quality of service and dramatically reduces the labor of waiters.")}}</div>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
               <lazy-img class="image" src="assets/img/scenes/eating_order.jpg" />
             </div>
             <div class="col-sm-12">
-              <div class="text">{{$t("Introduce special dishes and new dishes, remind automatically for dish serving, order completed and table clearance to increase quickly turnover.")}}</div>
+              <div class="text">{{$t("Introduce special and new dishes, remind automatically for dish serving, all dishes served and table clearance, it increases quickly turnover.")}}</div>
             </div>
           </div>
           <div class="row scenes">
@@ -73,7 +73,7 @@
               <lazy-img class="image" src="assets/img/scenes/takeway_postits.png" />
             </div>
             <div class="col-sm-7 scene">
-              <span>{{$t("All orders and packing records are displayed on the screen.")}}</span>
+              <span>{{$t("All orders are displayed on the screen, clickable and recordable for packing.")}}</span>
             </div>
             <div class="col-sm-5 scene">
               <lazy-img class="image" src="assets/img/scenes/cash_register.png" />
@@ -85,7 +85,7 @@
               <lazy-img class="image" src="assets/img/scenes/graphic_analyse.png" />
             </div>
             <div class="col-sm-7 scene">
-              <span>{{$t("Managers can analyze all data and print reports every month. The waiter can also print out performance reports every day.")}}</span>
+              <span>{{$t("The manager can analyze all data and print reports every month. Every waiter can print out performance reports every day.")}}</span>
             </div>
           </div>
         </div>
