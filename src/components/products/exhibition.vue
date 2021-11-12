@@ -9,7 +9,7 @@
         <div class="clickhere">{{$t("Click here")}}</div>
       </burst>
       <div class="product">
-        <div class="legend"><span class="text">{{$t("No wires, no contact, no downloads, any screen")}}</span></div>
+        <div class="legend"><span class="text">{{$t("No wires, no contact, no APP, any screen")}}</span></div>
         <div class="caption">{{$t("Mini cashier and ordering server")}}</div>
         <div class="subtitle">{{$t("For restaurants, fast food, snacks, bars, buffets, canteens, ...")}}</div>
         <div class="subtitle">{{$t("Support iPhone, iPad, Android phone, Android tablet, touchscreen, ...")}}</div>
@@ -73,7 +73,7 @@
               <lazy-img class="image" src="assets/img/scenes/takeway_postits.png" />
             </div>
             <div class="col-sm-7 scene">
-              <span>{{$t("All orders are displayed on the screen, clickable and recordable for packing.")}}</span>
+              <span>{{$t("All orders are displayed on the screen, clickable to record packaging.")}}</span>
             </div>
             <div class="col-sm-5 scene">
               <lazy-img class="image" src="assets/img/scenes/cash_register.png" />
@@ -258,7 +258,7 @@ export default {
           font-style: italic;
         }
         span.text {
-          margin-left: 2em;
+          //margin-left: 2em;
           float: left;
           background: #fe5815;
           color: white;
