@@ -49,7 +49,7 @@
               <lazy-img class="image" src="assets/img/scenes/client_order.png" />
             </div>
             <div class="col-sm-7 scene">
-              <span>{{$t("Ordering on a smartphone, nothing to be installed, it is sufficient to use the browser by entering the URL or scanning the QR code. After the order is submitted, the client will receive the cooking messages from the kitchen. He can delete and modify the order at any time.")}}</span>
+              <span>{{$t("Ordering on a smartphone, nothing to be installed, it is sufficient to use the browser by entering the URL or scanning the QR code. After the order is submitted, the client will receive the cooking messages from the kitchen. He can delete and modify a dish at any time if it is not prepared yet.")}}</span>
             </div>
             <div class="col-sm-5 scene">
               <lazy-img class="image" src="assets/img/scenes/order_kiosk.png" />
