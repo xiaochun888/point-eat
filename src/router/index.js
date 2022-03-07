@@ -17,7 +17,7 @@ export default new Router({
     },
     {
       path: '/priceMini',
-      name: 'Price mini',
+      name: 'Price',
       component: priceMini
     },
     {

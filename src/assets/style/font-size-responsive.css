@@ -10,7 +10,8 @@ html {
 }
 /**Next, body definition is set for all browsers that don’t understand the initial definition*/
 body {
-  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", "STKaiti", "华文楷体", "KaiTi", "楷体", sans-serif;
+  /* font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", "STKaiti", "华文楷体", "KaiTi", "楷体", sans-serif; */
+  font-family: Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   /**IE/Safari inherit != 100% */
   font-size: 100%;
   /** disable-pull-to-refresh-effect on android chrome. */
