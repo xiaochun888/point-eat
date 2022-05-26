@@ -1,4 +1,4 @@
-# witvue
+# Point Eat site
 
 > A Vue.js project
 
