@@ -1,6 +1,7 @@
 # Point Eat site
 
-> This is a Vue.js project which introduces Point Eat product about all use cases and contact information. 
+> This is a Vue project which introduces Point Eat product about all use cases and contact information. 
+Please see the demo site: www.point-eat.fr
 
 ## Build Setup
 
