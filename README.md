@@ -1,6 +1,6 @@
 # Point Eat site
 
-> A Vue.js project
+> This is a Vue.js project which introduces Point Eat product about all use cases and contact information. 
 
 ## Build Setup
 
